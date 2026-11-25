@@ -380,7 +380,7 @@
     }
   ],
   "config": {
-    "gpuTypeId": "NVIDIA L40S",
+    "gpuTypeId": "RTX PRO 6000",
     "gpuCount": 1,
     "env": [
       {
