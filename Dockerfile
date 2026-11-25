@@ -184,3 +184,23 @@ FROM base AS final
 
 # Copy models from stage 2 to the final image
 COPY --from=downloader /comfyui/models /comfyui/models
+
+RUN comfy model download \
+  --url https://huggingface.co/Noctaluna/Krea2-Noct-Uncensored/resolve/main/KreaNoct_V4_int8_convrot.safetensors \
+  --relative-path models/diffusion_models \
+  --filename KreaNoct_V4_int8_convrot.safetensors
+
+RUN comfy model download \
+  --url https://huggingface.co/AlperKTS/Krea2_FP8/resolve/main/qwen3vl_4b_fp8_scaled.safetensors \
+  --relative-path models/text_encoders \
+  --filename qwen3vl_4b_fp8_scaled.safetensors
+
+RUN comfy model download \
+  --url https://huggingface.co/Comfy-Org/Qwen-Image/resolve/main/split_files/vae/qwen_image_vae.safetensors \
+  --relative-path models/vae \
+  --filename qwen_image_vae.safetensors
+
+RUN comfy model download \
+  --url https://huggingface.co/Quiho/Krea2_TextFusion_Refusal-Reduction_LoRA_v1.0_lora/resolve/main/Krea2_TextFusion_Refusal_Reduction.safetensors \
+  --relative-path models/loras \
+  --filename Krea2_TextFusion_Refusal_Reduction.safetensors
