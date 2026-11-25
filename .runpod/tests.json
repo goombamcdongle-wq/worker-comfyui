@@ -380,7 +380,7 @@
     }
   ],
   "config": {
-    "gpuTypeId": "RTX PRO 6000",
+    "gpuTypeId": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
     "gpuCount": 1,
     "env": [
       {
